@@ -55,4 +55,7 @@
 .PostActions {
   position: relative;
   padding: 12px;
+  gap: 20px;
+  display: flex;
+  cursor: pointer;
 }

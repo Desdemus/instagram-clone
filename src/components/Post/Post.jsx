@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Post.css";
 
-import { LikeIcon } from "../icons";
+import { LikeIcon, MessangerIcon } from "../icons";
 
 const Post = ({ post }) => {
     const { isLike } = post;
@@ -36,6 +36,9 @@ const Post = ({ post }) => {
             <div className="PostActions">
                 <div onClick={() => toggleLike()} className="PostActions__Like">
                     <LikeIcon fill={like && like ? "#FD1D1D" : "#262626"} />
+                </div>
+                <div className="Message__post">
+                    <MessangerIcon />
                 </div>
             </div>
         </article>
