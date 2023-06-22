@@ -1,6 +1,5 @@
 import "./TopBar.css";
 
-//incons
 import { LikeIcon, LogoIcon, MessangerIcon } from "../icons";
 const TopBar = ({ setSection }) => {
     const onHandleclick = (sectionName) => setSection(sectionName)
@@ -14,7 +13,7 @@ const TopBar = ({ setSection }) => {
                 <div className="TopBar__Notif">
                     <LikeIcon fill={"#262626"} />
                 </div>
-                <div className="TopBar__Msg">
+                <div className="TopBar__Msg" onClick={() => onHandleclick("messages")}>
                     <MessangerIcon />
                 </div>
             </div>

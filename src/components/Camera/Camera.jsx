@@ -23,7 +23,7 @@ const Camera = () => {
             });
     }, []);
 
-    return <video className="Camera">O</video>;
+    return <div className="VideoPlayer"><video className="Camera">O</video></div>
 };
 
 export default Camera;
