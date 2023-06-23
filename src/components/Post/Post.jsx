@@ -1,7 +1,12 @@
 import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
+
+import "swiper/css";
+import "swiper/css/pagination";
 import "./Post.css";
 
-import { LikeIcon, MessangerIcon } from "../icons";
+import { LikeIcon } from "../icons";
 
 const Post = ({ post }) => {
     const { isLike } = post;
@@ -29,16 +34,21 @@ const Post = ({ post }) => {
                 <div className="PostTop__Actions"></div>
             </div>
             <div className="PostContent">
-                {post?.media?.map((media) => (
-                    <img key={media?.id} src={media?.src} />
-                ))}
+                <Swiper pagination={true} modules={[Pagination]}>
+                    {post?.media?.map((media) => (
+                        <SwiperSlide key={media?.id}>
+                            {media?.type === "image" ? (
+                                <img key={media?.id} src={media?.src} />
+                            ) : (
+                                <video src={media?.src} muted playsInline autoPlay loop></video>
+                            )}
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
             <div className="PostActions">
                 <div onClick={() => toggleLike()} className="PostActions__Like">
                     <LikeIcon fill={like && like ? "#FD1D1D" : "#262626"} />
-                </div>
-                <div className="Message__post">
-                    <MessangerIcon />
                 </div>
             </div>
         </article>

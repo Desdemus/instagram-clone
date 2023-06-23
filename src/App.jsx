@@ -16,8 +16,8 @@ function App() {
 
   useEffect(() => {
     Promise.all([
-      fetch("https://api.npoint.io/6976ef2a03c6f34df358").then((res) => res.json()),
-      fetch("https://api.npoint.io/2f8cacfef04215d94396").then((res) => res.json()),
+      fetch("https://api.npoint.io/d13616bacdeba49510d9").then((res) => res.json()),
+      fetch("https://api.npoint.io/f875ae9f917867084b9c").then((res) => res.json()),
       fetch("https://api.npoint.io/e55823d2026898ce841e").then((res) => res.json())
     ])
       .then(([postsData, storiesData, userData]) => {
